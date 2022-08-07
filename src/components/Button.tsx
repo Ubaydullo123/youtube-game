@@ -9,7 +9,7 @@ type Props = {
   width?: width;
   format?: buttonType;
 };
- 
+
 export const Button = styled.button<Props>`
   ${({ theme, width = "100%", format = "primary" }) => {
     const { background, color } = theme.button[format];
@@ -28,6 +28,7 @@ export const Button = styled.button<Props>`
     outline: none;
     cursor: pointer;
     width: ${width};
+    text-decoration: none;
     transition: all 0.3s ease-in-out;
     &:hover{
       color: ${background}; 

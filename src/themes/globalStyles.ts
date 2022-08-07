@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: ${({theme})=>theme.background.secondary};
+    box-sizing: border-box;
   }
 `;
 

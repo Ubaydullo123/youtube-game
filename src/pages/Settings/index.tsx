@@ -1,31 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../components/Button";
 import Menu from "../../components/Menu";
 import MenuTitle from "../../components/MenuTitle";
 import Navbar from "../../components/Navbar";
+import NameInput from "./components/NameInput";
+import Select from "./components/Select";
+import Switch from "./components/Switch";
 
-const Home = () => {
+type Props = {};
+
+const Settings = (props: Props) => {
+  const [theme, setTheme] = useState(true)
   return (
     <div>
       <Navbar title="Memory Game" />
       <Menu>
-        <MenuTitle>Start the game</MenuTitle>
-        <Button width="370px">Start</Button>
+        <MenuTitle>Settings</MenuTitle>
+        <NameInput />
+        <Select/>
+        <Switch checked={theme} onCheck={setTheme}/>
         <Button
-          to={"settings"}
           as={Link}
+          to="/"
           width="370px"
           style={{
             marginTop: "25px",
           }}
         >
-          Settings
+          Back
         </Button>
       </Menu>
     </div>
   );
 };
 
-export default Home;
+export default Settings;

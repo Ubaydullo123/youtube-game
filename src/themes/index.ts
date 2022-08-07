@@ -2,6 +2,13 @@ import { DefaultTheme } from "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
+    palette: {
+      violet: string;
+      white: string;
+      black: string;
+      pink: string;
+      gray: string;
+    };
     text: {
       primary: string;
       secondary: string;
@@ -32,32 +39,41 @@ declare module "styled-components" {
   }
 }
 
+const palette: DefaultTheme["palette"] = {
+  violet: "#37399A",
+  white: "#fff",
+  black: "#000",
+  pink: "#ED52B0",
+  gray: "#b0b0b0",
+};
+
 export const darkTheme: DefaultTheme = {
+  palette,
   text: {
-    primary: "#fff",
-    secondary: "#000",
-    alterative: "#ED52B0",
+    primary: palette.white,
+    secondary: palette.black,
+    alterative: palette.pink,
   },
   title: {
-    primary: "#000",
+    primary: palette.black,
   },
   background: {
-    primary: "#fff",
-    secondary: "#37399A",
-    alterative: "#ED52B0",
+    primary: palette.white,
+    secondary: palette.violet,
+    alterative: palette.pink,
   },
   button: {
     primary: {
-      color: "#fff",
-      background: "#37399A",
+      color: palette.white,
+      background: palette.violet,
     },
     secondary: {
-      color: "#37399A",
-      background: "#fff",
+      color: palette.violet,
+      background: palette.white,
     },
     alterative: {
-      color: "#fff",
-      background: "#ED52B0",
+      color: palette.white,
+      background: palette.pink,
     },
   },
 };

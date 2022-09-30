@@ -3,5 +3,5 @@ export const getFromStorage = (field: string) => {
   return value ?? undefined
 };
 
-export const setToStorage = (field: string, value: string) =>
-  localStorage.setItem(field, value);
+export const setToStorage = (field: string, value: any) =>
+  localStorage.setItem(field,typeof value === 'string' ? value : JSON.stringify(value));
